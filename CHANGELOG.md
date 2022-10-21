@@ -1,3 +1,6 @@
+## 3.2.41
+* android webview_flutter 충돌개선을 위한 패치 
+
 ## 3.2.4
 * webview_flutter 3.0.4 fork version
 * 재배포 
