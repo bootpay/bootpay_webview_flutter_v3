@@ -92,7 +92,7 @@ class _WebViewExampleState extends State<WebViewExample> {
 
     // #docregion platform_features
     late final PlatformWebViewControllerCreationParams params;
-    if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+    if (WebViewPlatform.instance is BTWebKitWebViewPlatform) {
       params = WebKitWebViewControllerCreationParams(
         allowsInlineMediaPlayback: true,
         mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
