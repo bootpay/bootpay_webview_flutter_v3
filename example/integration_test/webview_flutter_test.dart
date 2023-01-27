@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:bootpay_webview_flutter/webview_flutter.dart';
+import 'package:bootpay_webview_flutter/bootpay_webview_flutter.dart';
 import 'package:bootpay_webview_flutter_android/bootpay_webview_flutter_android.dart';
 import 'package:bootpay_webview_flutter_wkwebview/bootpay_webview_flutter_wkwebview.dart';
 

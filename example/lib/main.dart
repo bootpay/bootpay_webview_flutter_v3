@@ -11,7 +11,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:bootpay_webview_flutter/webview_flutter.dart';
+import 'package:bootpay_webview_flutter/bootpay_webview_flutter.dart';
 // #docregion platform_imports
 // Import for Android features.
 import 'package:bootpay_webview_flutter_android/bootpay_webview_flutter_android.dart';

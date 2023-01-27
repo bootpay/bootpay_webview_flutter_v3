@@ -3,11 +3,11 @@
 // found in the LICENSE file.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bootpay_webview_flutter/webview_flutter.dart' as main_file;
+import 'package:bootpay_webview_flutter/bootpay_webview_flutter.dart' as main_file;
 
 void main() {
   group('webview_flutter', () {
-    test('ensure webview_flutter.dart exports classes from platform interface',
+    test('ensure bootpay_webview_flutter.dart exports classes from platform interface',
         () {
       // ignore: unnecessary_statements
       main_file.JavaScriptMessage;

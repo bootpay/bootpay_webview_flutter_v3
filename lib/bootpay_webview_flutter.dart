@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-library webview_flutter;
+library bootpay_webview_flutter;
 
 export 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart'
     show

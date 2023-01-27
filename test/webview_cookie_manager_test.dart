@@ -5,7 +5,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:bootpay_webview_flutter/webview_flutter.dart';
+import 'package:bootpay_webview_flutter/bootpay_webview_flutter.dart';
 import 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart';
 
 import 'webview_cookie_manager_test.mocks.dart';

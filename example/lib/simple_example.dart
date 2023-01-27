@@ -5,7 +5,7 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:flutter/material.dart';
-import 'package:bootpay_webview_flutter/webview_flutter.dart';
+import 'package:bootpay_webview_flutter/bootpay_webview_flutter.dart';
 
 void main() => runApp(const MaterialApp(home: WebViewExample()));
 
