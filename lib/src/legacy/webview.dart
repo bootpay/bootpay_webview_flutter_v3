@@ -7,14 +7,13 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:bootpay_webview_flutter_android/bootpay_webview_android_cookie_manager.dart';
-import 'package:bootpay_webview_flutter_android/bootpay_webview_surface_android.dart';
-import 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart';
-import 'package:bootpay_webview_flutter_wkwebview/bootpay_webview_flutter_wkwebview.dart';
-
-import '../platform_interface.dart';
+// ignore: implementation_imports
+import 'package:bootpay_webview_flutter_android/src/webview_flutter_android_legacy.dart';
+// ignore: implementation_imports
+import 'package:bootpay_webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
+// ignore: implementation_imports
+import 'package:bootpay_webview_flutter_wkwebview/src/webview_flutter_wkwebview_legacy.dart';
 
 /// Optional callback invoked when a web view is first created. [controller] is
 /// the [WebViewController] for the created web view.
@@ -79,7 +78,7 @@ class WebView extends StatefulWidget {
   ///
   /// The `javascriptMode` and `autoMediaPlaybackPolicy` parameters must not be null.
   const WebView({
-    Key? key,
+    super.key,
     this.onWebViewCreated,
     this.initialUrl,
     this.initialCookies = const <WebViewCookie>[],
@@ -101,8 +100,7 @@ class WebView extends StatefulWidget {
     this.backgroundColor,
   })  : assert(javascriptMode != null),
         assert(initialMediaPlaybackPolicy != null),
-        assert(allowsInlineMediaPlayback != null),
-        super(key: key);
+        assert(allowsInlineMediaPlayback != null);
 
   static WebViewPlatform? _platform;
 
@@ -129,6 +127,7 @@ class WebView extends StatefulWidget {
         case TargetPlatform.iOS:
           _platform = CupertinoWebView();
           break;
+        // ignore: no_default_cases
         default:
           throw UnsupportedError(
               "Trying to use the default webview implementation for $defaultTargetPlatform but there isn't a default one");
@@ -319,7 +318,7 @@ class _WebViewState extends State<WebView> {
       webViewPlatformCallbacksHandler: _platformCallbacksHandler,
       javascriptChannelRegistry: _javascriptChannelRegistry,
       gestureRecognizers: widget.gestureRecognizers,
-      creationParams: _creationParamsfromWidget(widget),
+      creationParams: _creationParamsFromWidget(widget),
     );
   }
 
@@ -364,7 +363,7 @@ class _WebViewState extends State<WebView> {
   }
 }
 
-CreationParams _creationParamsfromWidget(WebView widget) {
+CreationParams _creationParamsFromWidget(WebView widget) {
   return CreationParams(
     initialUrl: widget.initialUrl,
     webSettings: _webSettingsFromWidget(widget),
@@ -804,7 +803,7 @@ class CookieManager {
         WebViewCookieManagerPlatform.instance = WKWebViewCookieManager();
       } else {
         throw AssertionError(
-            'This platform is currently unsupported by bootpay_webview_flutter.');
+            'This platform is currently unsupported by webview_flutter.');
       }
     }
   }

@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// Re-export the classes from the bootpay_webview_flutter_platform_interface through
+/// Re-export the classes from the webview_flutter_platform_interface through
 /// the `platform_interface.dart` file so we don't accidentally break any
 /// non-endorsed existing implementations of the interface.
-export 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart'
+export 'package:bootpay_webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart'
     show
         AutoMediaPlaybackPolicy,
         CreationParams,

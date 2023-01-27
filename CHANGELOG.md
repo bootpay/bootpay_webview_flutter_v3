@@ -1,3 +1,6 @@
+## 4.0.2
+* 4.0.2 version fork 
+
 ## 3.2.41~4
 * android webview_flutter 충돌개선을 위한 패치 
 
