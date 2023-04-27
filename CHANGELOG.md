@@ -1,5 +1,5 @@
 ## 4.0.28
-* * webview_flutter 와 충돌되지 않도록 rename
+* webview_flutter 와 충돌되지 않도록 rename
 
 ## 4.0.22~27
 * android, ios webview update 

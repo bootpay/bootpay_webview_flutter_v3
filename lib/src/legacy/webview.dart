@@ -127,7 +127,7 @@ class WebView extends StatefulWidget {
         case TargetPlatform.iOS:
           _platform = CupertinoWebView();
           break;
-        // ignore: no_default_cases
+      // ignore: no_default_cases
         default:
           throw UnsupportedError(
               "Trying to use the default webview implementation for $defaultTargetPlatform but there isn't a default one");
@@ -142,7 +142,7 @@ class WebView extends StatefulWidget {
   /// Which gestures should be consumed by the web view.
   ///
   /// It is possible for other gesture recognizers to be competing with the web view on pointer
-  /// events, e.g if the web view is inside a [ListView] the [ListView] will want to handle
+  /// events, e.g. if the web view is inside a [ListView] the [ListView] will want to handle
   /// vertical drags. The web view will claim gestures that are recognized by any of the
   /// recognizers on this list.
   ///
@@ -180,7 +180,7 @@ class WebView extends StatefulWidget {
   ///
   /// To asynchronously invoke the message handler which will print the message to standard output.
   ///
-  /// Adding a new JavaScript channel only takes affect after the next page is loaded.
+  /// Adding a new JavaScript channel only takes effect after the next page is loaded.
   ///
   /// Set values must not be null. A [JavascriptChannel.name] cannot be the same for multiple
   /// channels in the list.
@@ -305,7 +305,7 @@ class WebView extends StatefulWidget {
 
 class _WebViewState extends State<WebView> {
   final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
+  Completer<WebViewController>();
 
   late JavascriptChannelRegistry _javascriptChannelRegistry;
   late _PlatformCallbacksHandler _platformCallbacksHandler;
@@ -455,7 +455,7 @@ class _PlatformCallbacksHandler implements WebViewPlatformCallbacksHandler {
     required bool isForMainFrame,
   }) async {
     final NavigationRequest request =
-        NavigationRequest._(url: url, isForMainFrame: isForMainFrame);
+    NavigationRequest._(url: url, isForMainFrame: isForMainFrame);
     final bool allowNavigation = _widget.navigationDelegate == null ||
         await _widget.navigationDelegate!(request) ==
             NavigationDecision.navigate;
@@ -497,10 +497,10 @@ class _PlatformCallbacksHandler implements WebViewPlatformCallbacksHandler {
 /// callback for a [WebView] widget.
 class WebViewController {
   WebViewController._(
-    this._widget,
-    this._webViewPlatformController,
-    this._javascriptChannelRegistry,
-  ) : assert(_webViewPlatformController != null) {
+      this._widget,
+      this._webViewPlatformController,
+      this._javascriptChannelRegistry,
+      ) : assert(_webViewPlatformController != null) {
     _settings = _webSettingsFromWidget(_widget);
   }
 
@@ -519,8 +519,8 @@ class WebViewController {
   ///
   /// Throws an ArgumentError if the [absoluteFilePath] does not exist.
   Future<void> loadFile(
-    String absoluteFilePath,
-  ) {
+      String absoluteFilePath,
+      ) {
     assert(absoluteFilePath.isNotEmpty);
     return _webViewPlatformController.loadFile(absoluteFilePath);
   }
@@ -539,9 +539,9 @@ class WebViewController {
   /// The [baseUrl] parameter is used when resolving relative URLs within the
   /// HTML string.
   Future<void> loadHtmlString(
-    String html, {
-    String? baseUrl,
-  }) {
+      String html, {
+        String? baseUrl,
+      }) {
     assert(html.isNotEmpty);
     return _webViewPlatformController.loadHtmlString(
       html,
@@ -558,9 +558,9 @@ class WebViewController {
   ///
   /// Throws an ArgumentError if `url` is not a valid URL string.
   Future<void> loadUrl(
-    String url, {
-    Map<String, String>? headers,
-  }) async {
+      String url, {
+        Map<String, String>? headers,
+      }) async {
     assert(url != null);
     _validateUrlString(url);
     return _webViewPlatformController.loadUrl(url, headers);
@@ -650,12 +650,12 @@ class WebViewController {
   Future<void> _updateJavascriptChannels(
       Set<JavascriptChannel>? newChannels) async {
     final Set<String> currentChannels =
-        _javascriptChannelRegistry.channels.keys.toSet();
+    _javascriptChannelRegistry.channels.keys.toSet();
     final Set<String> newChannelNames = _extractChannelNames(newChannels);
     final Set<String> channelsToAdd =
-        newChannelNames.difference(currentChannels);
+    newChannelNames.difference(currentChannels);
     final Set<String> channelsToRemove =
-        currentChannels.difference(newChannelNames);
+    currentChannels.difference(newChannelNames);
     if (channelsToRemove.isNotEmpty) {
       await _webViewPlatformController
           .removeJavascriptChannels(channelsToRemove);
@@ -674,7 +674,7 @@ class WebViewController {
 
   Future<void> _updateSettings(WebSettings newSettings) {
     final WebSettings update =
-        _clearUnchangedWebSettings(_settings, newSettings);
+    _clearUnchangedWebSettings(_settings, newSettings);
     _settings = newSettings;
     return _webViewPlatformController.updateSettings(update);
   }

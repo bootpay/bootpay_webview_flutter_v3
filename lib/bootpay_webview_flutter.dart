@@ -6,23 +6,26 @@ library bootpay_webview_flutter;
 
 export 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart'
     show
-        JavaScriptMessage,
-        JavaScriptMode,
-        LoadRequestMethod,
-        NavigationDecision,
-        NavigationRequest,
-        NavigationRequestCallback,
-        PageEventCallback,
-        PlatformNavigationDelegateCreationParams,
-        PlatformWebViewControllerCreationParams,
-        PlatformWebViewCookieManagerCreationParams,
-        PlatformWebViewWidgetCreationParams,
-        ProgressCallback,
-        WebResourceError,
-        WebResourceErrorCallback,
-        WebResourceErrorType,
-        WebViewCookie,
-        WebViewPlatform;
+            JavaScriptMessage,
+            JavaScriptMode,
+            LoadRequestMethod,
+            NavigationDecision,
+            NavigationRequest,
+            NavigationRequestCallback,
+            PageEventCallback,
+            PlatformNavigationDelegateCreationParams,
+            PlatformWebViewControllerCreationParams,
+            PlatformWebViewCookieManagerCreationParams,
+            PlatformWebViewPermissionRequest,
+            PlatformWebViewWidgetCreationParams,
+            ProgressCallback,
+            UrlChange,
+            WebResourceError,
+            WebResourceErrorCallback,
+            WebResourceErrorType,
+            WebViewCookie,
+            WebViewPermissionResourceType,
+            WebViewPlatform;
 
 export 'src/navigation_delegate.dart';
 export 'src/webview_controller.dart';
