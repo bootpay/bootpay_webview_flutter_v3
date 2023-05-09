@@ -1,3 +1,9 @@
+## 4.2.1
+* android webview version up to 3.6.1
+
+## 4.2.0
+* 4.2.0 version forked
+
 ## 4.0.28
 * webview_flutter 와 충돌되지 않도록 rename
 
