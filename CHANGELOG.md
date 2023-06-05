@@ -1,3 +1,6 @@
+## 4.2.2
+* android webview version up to 3.6.2
+
 ## 4.2.1
 * android webview version up to 3.6.1
 
