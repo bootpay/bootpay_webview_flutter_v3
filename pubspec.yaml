@@ -2,11 +2,11 @@ name: bootpay_webview_flutter
 description: bootpay_webview_flutter 를 국내 결제환경에 맞게 fork 떠서 관리하는 프로젝트 입니다.
 repository: https://github.com/bootpay/bootpay_webview_flutter
 issue_tracker: https://github.com/bootpay/bootpay_webview_flutter/issues
-version: 4.2.2
+version: 4.2.3
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=2.18.0 <4.0.0"
+  flutter: ">=3.3.0"
 
 flutter:
   plugin:
