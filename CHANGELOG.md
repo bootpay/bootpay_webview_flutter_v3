@@ -1,3 +1,7 @@
+## 4.2.4
+* flutter version update
+* android webview version update
+
 ## 4.2.3
 * flutter/dart version support range changed
 
