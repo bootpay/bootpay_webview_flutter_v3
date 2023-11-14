@@ -19,7 +19,7 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  bootpay_webview_flutter_android: 3.6.3
+  bootpay_webview_flutter_android: 3.6.31
   bootpay_webview_flutter_platform_interface: ^2.3.0
   bootpay_webview_flutter_wkwebview: ^3.4.1
 
