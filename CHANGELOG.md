@@ -1,3 +1,6 @@
+## 4.2.42
+* ios webview version update
+
 ## 4.2.41
 * flutter version update
 * android webview version update
