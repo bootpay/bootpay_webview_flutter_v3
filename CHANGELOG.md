@@ -1,3 +1,6 @@
+## 4.3.0
+* android gradle version 8 support
+
 ## 4.2.42
 * ios webview version update
 
