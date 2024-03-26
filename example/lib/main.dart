@@ -149,8 +149,7 @@ Page resource error:
           );
         },
       )
-      ..loadRequest(Uri.parse('https://dev-js.bootapi.com/test/payment/'));
-      // ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse('https://flutter.dev'));
 
     // #docregion platform_features
     if (controller.platform is AndroidWebViewController) {
