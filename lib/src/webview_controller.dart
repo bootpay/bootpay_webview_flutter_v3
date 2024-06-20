@@ -2,14 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// TODO(a14n): remove this import once Flutter 3.1 or later reaches stable (including flutter/flutter#104231)
-// ignore: unnecessary_import
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:bootpay_webview_flutter_platform_interface/bootpay_webview_flutter_platform_interface.dart';
 
 import 'navigation_delegate.dart';
+import 'webview_widget.dart';
 
 /// Controls a WebView provided by the host platform.
 ///
@@ -60,9 +59,9 @@ class WebViewController {
   WebViewController({
     void Function(WebViewPermissionRequest request)? onPermissionRequest,
   }) : this.fromPlatformCreationParams(
-    const PlatformWebViewControllerCreationParams(),
-    onPermissionRequest: onPermissionRequest,
-  );
+          const PlatformWebViewControllerCreationParams(),
+          onPermissionRequest: onPermissionRequest,
+        );
 
   /// Constructs a [WebViewController] from creation params for a specific
   /// platform.
@@ -96,23 +95,23 @@ class WebViewController {
   /// ```
   /// {@endtemplate}
   WebViewController.fromPlatformCreationParams(
-      PlatformWebViewControllerCreationParams params, {
-        void Function(WebViewPermissionRequest request)? onPermissionRequest,
-      }) : this.fromPlatform(
-    PlatformWebViewController(params),
-    onPermissionRequest: onPermissionRequest,
-  );
+    PlatformWebViewControllerCreationParams params, {
+    void Function(WebViewPermissionRequest request)? onPermissionRequest,
+  }) : this.fromPlatform(
+          PlatformWebViewController(params),
+          onPermissionRequest: onPermissionRequest,
+        );
 
   /// Constructs a [WebViewController] from a specific platform implementation.
   ///
   /// {@macro webview_fluttter.WebViewController.constructor}
   WebViewController.fromPlatform(
-      this.platform, {
-        void Function(WebViewPermissionRequest request)? onPermissionRequest,
-      }) {
+    this.platform, {
+    void Function(WebViewPermissionRequest request)? onPermissionRequest,
+  }) {
     if (onPermissionRequest != null) {
       platform.setOnPlatformPermissionRequest(
-            (PlatformWebViewPermissionRequest request) {
+        (PlatformWebViewPermissionRequest request) {
           onPermissionRequest(WebViewPermissionRequest._(
             request,
             types: request.types,
@@ -154,7 +153,7 @@ class WebViewController {
     return platform.loadHtmlString(html, baseUrl: baseUrl);
   }
 
-  /// Makes a specific HTTP request ands loads the response in the webview.
+  /// Makes a specific HTTP request and loads the response in the webview.
   ///
   /// [method] must be one of the supported HTTP methods in [LoadRequestMethod].
   ///
@@ -165,11 +164,11 @@ class WebViewController {
   ///
   /// Throws an ArgumentError if [uri] has an empty scheme.
   Future<void> loadRequest(
-      Uri uri, {
-        LoadRequestMethod method = LoadRequestMethod.get,
-        Map<String, String> headers = const <String, String>{},
-        Uint8List? body,
-      }) {
+    Uri uri, {
+    LoadRequestMethod method = LoadRequestMethod.get,
+    Map<String, String> headers = const <String, String>{},
+    Uint8List? body,
+  }) {
     if (uri.scheme.isEmpty) {
       throw ArgumentError('Missing scheme in uri: $uri');
     }
@@ -267,8 +266,8 @@ class WebViewController {
   /// ```dart
   /// final WebViewController controller = WebViewController();
   /// controller.addJavaScriptChannel(
-  ///   name: 'Print',
-  ///   onMessageReceived: (JavascriptMessage message) {
+  ///   'Print',
+  ///   onMessageReceived: (JavaScriptMessage message) {
   ///     print(message.message);
   ///   },
   /// );
@@ -288,9 +287,9 @@ class WebViewController {
   ///
   /// A channel [name] cannot be the same for multiple channels.
   Future<void> addJavaScriptChannel(
-      String name, {
-        required void Function(JavaScriptMessage) onMessageReceived,
-      }) {
+    String name, {
+    required void Function(JavaScriptMessage) onMessageReceived,
+  }) {
     assert(name.isNotEmpty);
     return platform.addJavaScriptChannel(JavaScriptChannelParams(
       name: name,
@@ -353,6 +352,58 @@ class WebViewController {
   /// Sets the value used for the HTTP `User-Agent:` request header.
   Future<void> setUserAgent(String? userAgent) {
     return platform.setUserAgent(userAgent);
+  }
+
+  /// Sets a callback that notifies the host application on any log messages
+  /// written to the JavaScript console.
+  ///
+  /// Platforms may not preserve all the log level information so clients should
+  /// not rely on a 1:1 mapping between the JavaScript calls.
+  ///
+  /// On iOS setting this callback will inject a custom [WKUserScript] which
+  /// overrides the default implementation of `console.debug`, `console.error`,
+  /// `console.info`, `console.log` and `console.warning` methods. The iOS
+  /// WebKit framework unfortunately doesn't provide a built-in method to
+  /// forward console messages.
+  Future<void> setOnConsoleMessage(
+      void Function(JavaScriptConsoleMessage message) onConsoleMessage) {
+    return platform.setOnConsoleMessage(onConsoleMessage);
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript alert() dialog.
+  Future<void> setOnJavaScriptAlertDialog(
+      Future<void> Function(JavaScriptAlertDialogRequest request)
+          onJavaScriptAlertDialog) async {
+    return platform.setOnJavaScriptAlertDialog(onJavaScriptAlertDialog);
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript confirm() dialog.
+  Future<void> setOnJavaScriptConfirmDialog(
+      Future<bool> Function(JavaScriptConfirmDialogRequest request)
+          onJavaScriptConfirmDialog) async {
+    return platform.setOnJavaScriptConfirmDialog(onJavaScriptConfirmDialog);
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript prompt() dialog.
+  Future<void> setOnJavaScriptTextInputDialog(
+      Future<String> Function(JavaScriptTextInputDialogRequest request)
+          onJavaScriptTextInputDialog) async {
+    return platform.setOnJavaScriptTextInputDialog(onJavaScriptTextInputDialog);
+  }
+
+  /// Gets the value used for the HTTP `User-Agent:` request header.
+  Future<String?> getUserAgent() {
+    return platform.getUserAgent();
+  }
+
+  /// Sets a listener for scroll position changes.
+  Future<void> setOnScrollPositionChange(
+    void Function(ScrollPositionChange change)? onScrollPositionChange,
+  ) {
+    return platform.setOnScrollPositionChange(onScrollPositionChange);
   }
 }
 

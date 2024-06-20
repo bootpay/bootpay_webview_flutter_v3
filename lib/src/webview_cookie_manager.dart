@@ -34,8 +34,8 @@ class WebViewCookieManager {
   /// parameters for a specific platform.
   WebViewCookieManager()
       : this.fromPlatformCreationParams(
-    const PlatformWebViewCookieManagerCreationParams(),
-  );
+          const PlatformWebViewCookieManagerCreationParams(),
+        );
 
   /// Constructs a [WebViewCookieManager] from creation params for a specific
   /// platform.
@@ -67,8 +67,8 @@ class WebViewCookieManager {
   /// ```
   /// {@endtemplate}
   WebViewCookieManager.fromPlatformCreationParams(
-      PlatformWebViewCookieManagerCreationParams params,
-      ) : this.fromPlatform(PlatformWebViewCookieManager(params));
+    PlatformWebViewCookieManagerCreationParams params,
+  ) : this.fromPlatform(PlatformWebViewCookieManager(params));
 
   /// Constructs a [WebViewCookieManager] from a specific platform
   /// implementation.

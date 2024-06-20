@@ -39,24 +39,29 @@ class NavigationDelegate {
   ///
   /// {@template webview_fluttter.NavigationDelegate.constructor}
   /// `onUrlChange`: invoked when the underlying web view changes to a new url.
+  /// `onHttpAuthRequest`: invoked when the web view is requesting authentication.
   /// {@endtemplate}
   NavigationDelegate({
     FutureOr<NavigationDecision> Function(NavigationRequest request)?
-    onNavigationRequest,
+        onNavigationRequest,
     void Function(String url)? onPageStarted,
     void Function(String url)? onPageFinished,
     void Function(int progress)? onProgress,
     void Function(WebResourceError error)? onWebResourceError,
     void Function(UrlChange change)? onUrlChange,
+    void Function(HttpAuthRequest request)? onHttpAuthRequest,
+    void Function(HttpResponseError error)? onHttpError,
   }) : this.fromPlatformCreationParams(
-    const PlatformNavigationDelegateCreationParams(),
-    onNavigationRequest: onNavigationRequest,
-    onPageStarted: onPageStarted,
-    onPageFinished: onPageFinished,
-    onProgress: onProgress,
-    onWebResourceError: onWebResourceError,
-    onUrlChange: onUrlChange,
-  );
+          const PlatformNavigationDelegateCreationParams(),
+          onNavigationRequest: onNavigationRequest,
+          onPageStarted: onPageStarted,
+          onPageFinished: onPageFinished,
+          onProgress: onProgress,
+          onWebResourceError: onWebResourceError,
+          onUrlChange: onUrlChange,
+          onHttpAuthRequest: onHttpAuthRequest,
+          onHttpError: onHttpError,
+        );
 
   /// Constructs a [NavigationDelegate] from creation params for a specific
   /// platform.
@@ -90,36 +95,42 @@ class NavigationDelegate {
   /// ```
   /// {@endtemplate}
   NavigationDelegate.fromPlatformCreationParams(
-      PlatformNavigationDelegateCreationParams params, {
-        FutureOr<NavigationDecision> Function(NavigationRequest request)?
+    PlatformNavigationDelegateCreationParams params, {
+    FutureOr<NavigationDecision> Function(NavigationRequest request)?
         onNavigationRequest,
-        void Function(String url)? onPageStarted,
-        void Function(String url)? onPageFinished,
-        void Function(int progress)? onProgress,
-        void Function(WebResourceError error)? onWebResourceError,
-        void Function(UrlChange change)? onUrlChange,
-      }) : this.fromPlatform(
-    PlatformNavigationDelegate(params),
-    onNavigationRequest: onNavigationRequest,
-    onPageStarted: onPageStarted,
-    onPageFinished: onPageFinished,
-    onProgress: onProgress,
-    onWebResourceError: onWebResourceError,
-    onUrlChange: onUrlChange,
-  );
+    void Function(String url)? onPageStarted,
+    void Function(String url)? onPageFinished,
+    void Function(int progress)? onProgress,
+    void Function(WebResourceError error)? onWebResourceError,
+    void Function(UrlChange change)? onUrlChange,
+    void Function(HttpAuthRequest request)? onHttpAuthRequest,
+    void Function(HttpResponseError error)? onHttpError,
+  }) : this.fromPlatform(
+          PlatformNavigationDelegate(params),
+          onNavigationRequest: onNavigationRequest,
+          onPageStarted: onPageStarted,
+          onPageFinished: onPageFinished,
+          onProgress: onProgress,
+          onWebResourceError: onWebResourceError,
+          onUrlChange: onUrlChange,
+          onHttpAuthRequest: onHttpAuthRequest,
+          onHttpError: onHttpError,
+        );
 
   /// Constructs a [NavigationDelegate] from a specific platform implementation.
   ///
   /// {@macro webview_fluttter.NavigationDelegate.constructor}
   NavigationDelegate.fromPlatform(
-      this.platform, {
-        this.onNavigationRequest,
-        this.onPageStarted,
-        this.onPageFinished,
-        this.onProgress,
-        this.onWebResourceError,
-        void Function(UrlChange change)? onUrlChange,
-      }) {
+    this.platform, {
+    this.onNavigationRequest,
+    this.onPageStarted,
+    this.onPageFinished,
+    this.onProgress,
+    this.onWebResourceError,
+    void Function(UrlChange change)? onUrlChange,
+    HttpAuthRequestCallback? onHttpAuthRequest,
+    void Function(HttpResponseError error)? onHttpError,
+  }) {
     if (onNavigationRequest != null) {
       platform.setOnNavigationRequest(onNavigationRequest!);
     }
@@ -137,6 +148,12 @@ class NavigationDelegate {
     }
     if (onUrlChange != null) {
       platform.setOnUrlChange(onUrlChange);
+    }
+    if (onHttpAuthRequest != null) {
+      platform.setOnHttpAuthRequest(onHttpAuthRequest);
+    }
+    if (onHttpError != null) {
+      platform.setOnHttpError(onHttpError);
     }
   }
 
@@ -167,4 +184,3 @@ class NavigationDelegate {
   /// Invoked when a resource loading error occurred.
   final WebResourceErrorCallback? onWebResourceError;
 }
-
