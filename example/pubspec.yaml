@@ -3,8 +3,8 @@ description: Demonstrates how to use the bootpay_webview_flutter plugin.
 publish_to: none
 
 environment:
-  sdk: ^3.2.3
-  flutter: ">=3.16.6"
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
 
 dependencies:
   flutter:
@@ -17,9 +17,9 @@ dependencies:
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version.
     path: ../
-  bootpay_webview_flutter_android: ^3.16.41
-  bootpay_webview_flutter_platform_interface: ^2.10.0
-  bootpay_webview_flutter_wkwebview: ^3.13.13
+  bootpay_webview_flutter_android: ^3.17.1
+  bootpay_webview_flutter_platform_interface: ^2.10.1
+  bootpay_webview_flutter_wkwebview: ^3.14.0
 
 dev_dependencies:
   build_runner: ^2.1.5
@@ -30,7 +30,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  bootpay_webview_flutter_platform_interface: ^2.10.0
+  bootpay_webview_flutter_platform_interface: ^2.10.1
 
 flutter:
   uses-material-design: true
