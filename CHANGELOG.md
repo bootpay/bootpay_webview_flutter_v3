@@ -1,3 +1,6 @@
+## 4.8.2
+* ios webview version update
+
 ## 4.8.1
 * 4.8.1 sdk versino update
 

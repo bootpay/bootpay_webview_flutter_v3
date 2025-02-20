@@ -19,7 +19,7 @@ dependencies:
     path: ../
   bootpay_webview_flutter_android: ^3.17.1
   bootpay_webview_flutter_platform_interface: ^2.10.1
-  bootpay_webview_flutter_wkwebview: ^3.14.0
+  bootpay_webview_flutter_wkwebview: ^3.13.14
 
 dev_dependencies:
   build_runner: ^2.1.5
