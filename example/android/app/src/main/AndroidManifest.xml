@@ -9,13 +9,14 @@
         android:name="flutterEmbedding"
         android:value="2" />
     <activity
-      android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-      android:hardwareAccelerated="true"
-      android:launchMode="singleTop"
-      android:exported="true"
-      android:name="io.flutter.embedding.android.FlutterActivity"
-      android:theme="@style/LaunchTheme"
-      android:windowSoftInputMode="adjustResize">
+        android:name=".WebViewTestActivity"
+        android:launchMode="singleTop"
+        android:theme="@style/LaunchTheme"
+        android:supportsRtl="true"
+        android:exported="true"
+        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+        android:hardwareAccelerated="true"
+        android:windowSoftInputMode="adjustResize">
       <!-- This keeps the window background of the activity showing
            until Flutter renders its first frame. It can be removed if
            there is no splash screen (such as the default splash screen
