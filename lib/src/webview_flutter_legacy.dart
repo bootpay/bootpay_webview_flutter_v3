@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 export 'package:bootpay_webview_flutter_android/src/webview_flutter_android_legacy.dart';
-export 'package:bootpay_webview_flutter_wkwebview/src/webview_flutter_wkwebview_legacy.dart';
+export 'package:bootpay_webview_flutter_wkwebview/src/bt_webview_flutter_wkwebview_legacy.dart';
 
 export 'legacy/platform_interface.dart';
 export 'legacy/webview.dart';
