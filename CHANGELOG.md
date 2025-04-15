@@ -1,3 +1,6 @@
+## 4.9.12
+* android 카카오뱅크 앱 스키마 추가
+
 ## 4.9.11
 * android bug fixed
 
