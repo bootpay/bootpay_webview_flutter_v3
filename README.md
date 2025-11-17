@@ -1,6 +1,16 @@
 # bootpay_webview_flutter 플러터 라이브러리
 
+[![pub package](https://img.shields.io/pub/v/bootpay_webview_flutter.svg)](https://pub.dev/packages/bootpay_webview_flutter)
+
 webview_flutter를 부트페이가 Fork 떠서 만든 웹뷰입니다. 이미 결제모듈이 동작하는 웹사이트에 webview로 링크만 연결하여 사용하실 웹앱 flutter 개발자분께서는 해당 모듈의 웹뷰를 사용하시면 쉽게 결제 진행이 가능하십니다.
+
+## 주요 특징
+
+- ✅ **한국 결제 환경 완벽 지원**: 30+ 한국 결제앱 (카카오페이, 네이버페이, 토스, 신한/KB/삼성카드 등)
+- ✅ **최신 webview_flutter 기반**: Android v4.4.0, iOS v3.23.2
+- ✅ **앱투앱 결제 자동 처리**: Intent scheme, Custom URL scheme 자동 처리
+- ✅ **ISP/앱카드 지원**: 모든 카드사 앱카드 및 ISP 완벽 지원
+- ✅ **간편결제 지원**: PAYCO, SSG페이 등
 
 ## 설치하기
 ``pubspec.yaml`` 파일에 아래 모듈을 추가해주세요
@@ -153,6 +163,45 @@ Page resource error:
   }
 }
 ```
+
+## 지원하는 결제 앱
+
+### 카드사 앱카드
+- 신한카드 (shinhan-sr-ansimclick)
+- KB카드 (kb-acp)
+- 삼성카드 (mpocket.online.ansimclick, samsungpay)
+- 현대카드 (hdcardappcardansimclick)
+- 롯데카드 (lotteappcard, lottesmartpay)
+- NH농협카드 (nhappvardansimclick)
+- 우리카드 (com.wooricard.wcard)
+- 하나카드 (cloudpay)
+- 씨티카드 (citispay)
+
+### 간편결제
+- 카카오페이 (kakaotalk)
+- 네이버페이 (naversearchapp)
+- 토스 (supertoss)
+- PAYCO (payco)
+- SSG페이 (shinsegaeeasypayment)
+- L.pay (lpayapp)
+
+### 인증/결제
+- 뱅크페이 (kfc-bankpay)
+- ISP (kfc-ispmobile)
+- PASS (SKT/KT/LG U+)
+
+## 버전 정보
+
+| 패키지 | 버전 | 기반 |
+|--------|------|------|
+| bootpay_webview_flutter | 4.11.0 | webview_flutter 4.13.0 |
+| bootpay_webview_flutter_android | 4.4.0 | webview_flutter_android 4.10.5 |
+| bootpay_webview_flutter_wkwebview | 3.23.2 | webview_flutter_wkwebview 3.23.2 |
+| bootpay_webview_flutter_platform_interface | 2.14.0 | webview_flutter_platform_interface 2.14.0 |
+
+## 변경 이력
+
+자세한 변경 이력은 [CHANGELOG.md](CHANGELOG.md)를 참조해주세요.
 
 ## Documentation
 

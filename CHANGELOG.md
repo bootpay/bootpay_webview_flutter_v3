@@ -1,3 +1,29 @@
+## 4.11.1
+* **Dependency Update**: 의존 모듈 버전 동기화
+  - bootpay_webview_flutter_android: 4.10.5
+  - bootpay_webview_flutter_wkwebview: 3.23.21
+  - bootpay_webview_flutter_platform_interface: 2.14.0
+* 모든 의존 패키지의 안정성 개선 및 버전 호환성 보장
+
+## 4.10.5
+* **Major Update**: 최신 webview_flutter (v4.13.0) 기반으로 전면 마이그레이션
+* **Android**: v3.17.1 → v4.10.5 업그레이드
+  - Gradle 8.12.1, Kotlin 2.2.10, Java 17 지원
+  - Pigeon v25 기반 ProxyApi 패턴 적용
+  - BootpayUrlHelper를 WebViewClientProxyApi에 통합
+  - 한국 결제 앱 지원 유지 (신한/KB/삼성/카카오 등 30+ 앱)
+* **iOS**: v3.13.15 → v3.23.2 업그레이드
+  - Swift 기반 NavigationDelegate로 전환 (Objective-C → Swift)
+  - Pigeon v25 기반 ProxyApi 패턴 적용
+  - URL scheme 처리 로직 Swift로 재구현
+  - 모든 한국 결제 앱 지원 유지
+* **Platform Interface**: v2.10.1 → v2.14.0 업그레이드
+* **Breaking Changes**:
+  - Android: Java 17 필요 (이전 Java 11)
+  - iOS: Swift 기반 (이전 Objective-C)
+  - minSdk 21 유지 (호환성 보장)
+* **Migration Guide**: 기존 코드 변경 없이 패키지 버전만 업데이트하면 됩니다
+
 ## 4.9.12
 * android 카카오뱅크 앱 스키마 추가
 

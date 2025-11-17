@@ -14,7 +14,7 @@ import 'package:bootpay_webview_flutter_android/src/webview_flutter_android_lega
 // ignore: implementation_imports
 import 'package:bootpay_webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
 // ignore: implementation_imports
-import 'package:bootpay_webview_flutter_wkwebview/src/bt_webview_flutter_wkwebview_legacy.dart';
+import 'package:bootpay_webview_flutter_wkwebview/src/webview_flutter_wkwebview_legacy.dart';
 
 /// Optional callback invoked when a web view is first created. [controller] is
 /// the [WebViewController] for the created web view.
