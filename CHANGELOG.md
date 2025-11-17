@@ -1,7 +1,7 @@
-## 4.11.1
+## 4.11.2
 * **Dependency Update**: 의존 모듈 버전 동기화
-  - bootpay_webview_flutter_android: 4.10.5
-  - bootpay_webview_flutter_wkwebview: 3.23.21
+  - bootpay_webview_flutter_android: 4.10.51
+  - bootpay_webview_flutter_wkwebview: 3.23.22
   - bootpay_webview_flutter_platform_interface: 2.14.0
 * 모든 의존 패키지의 안정성 개선 및 버전 호환성 보장
 

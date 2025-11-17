@@ -31,11 +31,11 @@ import 'webview_widget.dart';
 /// final WebViewController webViewController = WebViewController();
 ///
 /// if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-///   final WebKitWebViewController webKitController =
-///       webViewController.platform as WebKitWebViewController;
+///   final BootpayWebKitWebViewController webKitController =
+///       webViewController.platform as BootpayWebKitWebViewController;
 /// } else if (WebViewPlatform.instance is AndroidWebViewPlatform) {
-///   final AndroidWebViewController androidController =
-///       webViewController.platform as AndroidWebViewController;
+///   final BootpayAndroidWebViewController androidController =
+///       webViewController.platform as BootpayAndroidWebViewController;
 /// }
 /// ```
 class WebViewController {
@@ -77,12 +77,12 @@ class WebViewController {
   ///     const PlatformWebViewControllerCreationParams();
   ///
   /// if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-  ///   params = WebKitWebViewControllerCreationParams
+  ///   params = BootpayWebKitWebViewControllerCreationParams
   ///       .fromPlatformWebViewControllerCreationParams(
   ///     params,
   ///   );
   /// } else if (WebViewPlatform.instance is AndroidWebViewPlatform) {
-  ///   params = AndroidWebViewControllerCreationParams
+  ///   params = BootpayAndroidWebViewControllerCreationParams
   ///       .fromPlatformWebViewControllerCreationParams(
   ///     params,
   ///   );
