@@ -1,3 +1,9 @@
+## 4.12.3
+* **Dependency Update**: iOS 웹뷰 세션 유지 및 크래시 방지 수정
+  - bootpay_webview_flutter_wkwebview: 3.23.26
+    - 외부 앱 복귀 시 세션 만료 문제 해결 (WKProcessPool 싱글톤)
+    - NavigationDelegate 크래시 방지 (weak reference)
+
 ## 4.11.2
 * **Dependency Update**: 의존 모듈 버전 동기화
   - bootpay_webview_flutter_android: 4.10.51
