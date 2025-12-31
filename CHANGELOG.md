@@ -1,3 +1,8 @@
+## 4.12.4
+* **Dependency Update**: Android 웹뷰 Payment Request API 지원
+  - bootpay_webview_flutter_android: 4.10.60
+    - androidx.webkit 1.14.0으로 업그레이드
+
 ## 4.12.3
 * **Dependency Update**: iOS 웹뷰 세션 유지 및 크래시 방지 수정
   - bootpay_webview_flutter_wkwebview: 3.23.26
