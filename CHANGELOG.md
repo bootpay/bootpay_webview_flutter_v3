@@ -1,3 +1,10 @@
+## 4.12.5
+* **Dependency Update**: Android 팝업 WebView 터치 이벤트 정상화
+  - bootpay_webview_flutter_android: 4.10.62
+    - 팝업을 Activity DecorView에 추가하여 터치 이벤트 직접 전달
+    - status bar SafeArea 적용
+    - window.close() 정상 처리
+
 ## 4.12.4
 * **Dependency Update**: Android 웹뷰 Payment Request API 지원
   - bootpay_webview_flutter_android: 4.10.60
