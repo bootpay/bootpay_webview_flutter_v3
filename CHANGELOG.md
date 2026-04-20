@@ -1,3 +1,8 @@
+## 4.12.6
+* **Dependency Update**: iOS 라우팅 보강
+  - bootpay_webview_flutter_wkwebview: 3.23.31
+    - 삼성 모니모(`monimopay://`, `smcard://`) 스킴 App Store fallback 추가
+
 ## 4.12.5
 * **Dependency Update**: Android 팝업 WebView 터치 이벤트 정상화
   - bootpay_webview_flutter_android: 4.10.62
